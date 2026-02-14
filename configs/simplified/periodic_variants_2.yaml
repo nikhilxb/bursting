@@ -1,0 +1,12 @@
+# @package _global_
+name: simplified/periodic_variants
+
+hydra:
+  sweeper:
+    params:
+      model.k_active_neg: 0.5
+      model.k_quiet_neg: 1.5
+
+defaults:
+  - /simplified/periodic_variants_0
+  - _self_

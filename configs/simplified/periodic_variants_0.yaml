@@ -1,0 +1,18 @@
+# @package _global_
+name: simplified/periodic_variants
+
+defaults:
+  - /simplified/periodic
+  - _self_
+
+model:
+  activation: rectangular
+  k_adaptation_active_pos: 1. # Adaptation scale in active period at i = +1.
+  k_adaptation_quiet_pos: 1. # Adaptation scale in quiet period at i = +1.
+  k_adaptation_active_neg: 1. # Adaptation scale in active period at i = -1.
+  k_adaptation_quiet_neg: 1. # Adaptation scale in quiet period at i = -1.
+  d_active: 0. # Delay fraction of active period.
+  d_quiet: 0. # Delay fraction of quiet period.
+
+measure:
+  widths: [100]

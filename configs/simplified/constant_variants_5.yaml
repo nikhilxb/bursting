@@ -1,0 +1,12 @@
+# @package _global_
+name: simplified/constant_variants
+
+hydra:
+  sweeper:
+    params:
+      model.x_active_stable: 0.6
+      model.x_quiet_stable: -0.2
+
+defaults:
+  - /simplified/constant_variants_0
+  - _self_

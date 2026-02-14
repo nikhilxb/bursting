@@ -1,0 +1,33 @@
+name: bursting
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  # Python
+  - python=3.10
+  - pip>=23.0
+  # Data analysis
+  - numpy>=1.24
+  - pandas>=1.5
+  - jupyterlab>=4.1
+  - ipywidgets>=8.0
+  - mediapy=1.1.8
+  - matplotlib>=3.7
+  - seaborn>=0.12
+  - scipy>=1.10
+  # Multimedia
+  - scikit-image>=0.19
+  - imageio>=2.19
+  - imageio-ffmpeg>=0.4
+  - pillow>=9.3
+  - conda-forge::ffmpeg=5.1
+  # Utilities
+  - pyyaml>=6.0
+  - termcolor>=2.1
+  - tqdm>=4.64
+  - pre-commit>=3.0
+  # Machine learning
+  - pytorch=2.3
+  - torchvision=0.18
+  - torchaudio=2.3

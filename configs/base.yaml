@@ -1,0 +1,22 @@
+# @package _global_
+name: ???
+
+defaults:
+  - /infra/base
+  - _self_
+
+model: ???
+simulate: ???
+measure: ???
+plot: ???
+
+paths:
+  output_dir: ${hydra:runtime.output_dir}
+  working_dir: ${hydra:runtime.cwd}
+  checkpoint_dir: null
+
+compute:
+  cpu: 8
+  gpu: 0
+  mem: 16
+  time: 30

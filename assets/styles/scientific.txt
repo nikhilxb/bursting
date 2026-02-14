@@ -1,0 +1,128 @@
+e7f2fb blue1 b1
+d0e8fc blue2 b2
+badefe blue3 b3 bll bluell
+8dc0f2 blue4 b4 bl  bluel
+1b7bc7 blue5 b5 b   blue
+0c558e blue6 b6 bd  blued
+033e67 blue7 b7 bdd bluedd
+0b2d4f blue8 b8
+
+fdedea red1 r1
+fedbd4 red2 r2
+fdb9ad red3 r3 rll redll
+ee8a7c red4 r4 rl  redl
+cf3c33 red5 r5 r   red
+a3171a red6 r6 rd  redd
+731111 red7 r7 rdd reddd
+521913 red8 r8
+
+fcf7e1 yellow1 y1
+faefc5 yellow2 y2
+f8deac yellow3 y3 yll yellowll
+f5cc8e yellow4 y4 yl  yellowl
+e7a341 yellow5 y5 y   yellow
+b97e22 yellow6 y6 yd  yellowd
+8a5b09 yellow7 y7 ydd yellowdd
+6c400b yellow8 y8
+
+e4f5eb green1 g1
+c4ecd5 green2 g2
+a6e8c4 green3 g3 gll greenll
+76d7a5 green4 g4 gl  greenl
+06a66c green5 g5 g   green
+038354 green6 g6 gd  greend
+0b5539 green7 g7 gdd greendd
+043d28 green8 g8
+
+f6eef9 purple1 p1
+eeddf4 purple2 p2
+e8c6f6 purple3 p3 pll purplell
+ce96e6 purple4 p4 pl  purplel
+9856b8 purple5 p5 p   purple
+79349d purple6 p6 pd  purpled
+512668 purple7 p7 pdd purpledd
+3d1f4c purple8 p8
+
+feeee3 orange1 o1
+ffdcc3 orange2 o2
+ffcdb0 orange3 o3 oll orangell
+feae80 orange4 o4 ol  orangel
+e27136 orange5 o5 o   orange
+b74c13 orange6 o6 od  oranged
+7f3309 orange7 o7 odd orangedd
+5e2105 orange8 o8
+
+e3f4f3 cyan1 c1
+ccf3ef cyan2 c2
+bdece6 cyan3 c3 cll cyanll
+93e0de cyan4 c4 cl  cyanl
+23c1bb cyan5 c5 c   cyan
+319798 cyan6 c6 cd  cyand
+107071 cyan7 c7 cdd cyandd
+125353 cyan8 c8
+
+fbedf4 magenta1 m1
+f8daea magenta2 m2
+fec8e6 magenta3 m3 mll magentall
+f99cd2 magenta4 m4 ml  magental
+e163b1 magenta5 m5 m   magenta
+bd348e magenta6 m6 md  magentad
+7f2860 magenta7 m7 mdd magentadd
+562147 magenta8 m8
+
+eef6e4 lime1 l1
+e1f1cc lime2 l2
+cfecac lime3 l3 lll limell
+afe08a lime4 l4 ll  limel
+82be54 lime5 l5 l   lime
+569842 lime6 l6 ld  limed
+3c702c lime7 l7 ldd limedd
+305225 lime8 l8
+
+eff0fc indigo1 i1
+dfe1fb indigo2 i2
+cdd2f8 indigo3 i3 ill indigoll
+afb3f8 indigo4 i4 il  indigol
+8488e1 indigo5 i5 i   indigo
+6463bb indigo6 i6 id  indigod
+444382 indigo7 i7 idd indigodd
+2f305f indigo8 i8
+
+f1f1f1 gray1 x1
+e2e2e2 gray2 x2
+c9c9c9 gray3 x3 xll grayll
+a6a6a6 gray4 x4 xl  grayl
+727272 gray5 x5 x   gray
+525252 gray6 x6 xd  grayd
+393939 gray7 x7 xdd graydd
+2c2c2c gray8 x8
+
+eef1f6 cool1 xc1
+dee3ee cool2 xc2
+c2c9da cool3 xc3 xcll coolll
+9ca6bb cool4 xc4 xcl  cooll
+66728b cool5 xc5 xc   cool
+46536a cool6 xc6 xcd  coold
+2d3a4e cool7 xc7 xcdd cooldd
+212c3f cool8 xc8
+
+f2f1eb warm1 xw1
+e5e3d8 warm2 xw2
+cdcab9 warm3 xw3 xwll warmll
+aaa691 warm4 xw4 xwl  warml
+767359 warm5 xw5 xw   warm
+56533b warm6 xw6 xwd  warmd
+3b3a24 warm7 xw7 xwdd warmdd
+2e2d1a warm8 xw8
+
+faefe4 skin1 s1
+f1dfd1 skin2 s2
+ddc5b4 skin3 s3
+bea08e skin4 s4
+8e6a59 skin5 s5
+6b4b3f skin6 s6
+4e322b skin7 s7
+3e2622 skin8 s8
+
+ffffff white w
+000000 black k

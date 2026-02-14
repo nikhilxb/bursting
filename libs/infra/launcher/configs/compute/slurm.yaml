@@ -1,0 +1,49 @@
+# @package _global_
+
+defaults:
+  - /compute/base
+  - override /hydra/launcher: submitit_slurm
+  - override /hydra/job_logging: stdout
+
+# Dict of SLURM-specific parameters (e.g. 'account').
+slurm: {} 
+
+hydra:
+  # Complete list of Submitit SLURM Launcher parameters at: https://hydra.cc/docs/plugins/submitit_launcher/.
+  # A sweep will run a SLURM array job consisting of many tasks, each of which have the following configuration.
+  # Therefore, `tasks_per_node` should be 1 in the typical case with no subtasks.
+  launcher:
+    # Path to logs directory.
+    submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+    # Number of compute nodes.
+    nodes: 1
+    # Number of CPUs per task (typically per compute node).
+    cpus_per_task: ${compute.cpu}
+    # Number of GPUs per compute node (or 'type:number', type={'rtx8000','v100','a100','h100'}).
+    gres: gpu:${compute.gpu}
+    # Memory (in GB) per compute node.
+    mem_gb: ${compute.mem}
+    # Time allotted (in minutes) per task.
+    timeout_min: ${compute.time}
+    # Name of a specific group of nodes to use.
+    partition: null
+    # Max number of tasks that can run in parallel.
+    array_parallelism: 2000
+    # Dict of SLURM key:value parameters.
+    additional_parameters: ${slurm}
+    # List of terminal commands to run in `sbatch` before running `srun`.
+    setup: []
+
+   # Output logs to only to stdout handler (which submitit captures and saves to a file), so no need
+  # for an additional file handler.
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'
+
+  callbacks:
+    run_in_container:
+      _target_: infra.launcher.RunInContainerCallback
+      container: ${compute.container}
+    submitit_logs:
+      _target_: infra.launcher.SubmititLogsCallback

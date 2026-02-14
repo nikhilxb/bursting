@@ -1,0 +1,25 @@
+# @package _global_
+name: simplified/constant
+
+defaults:
+  - /base
+  - /simplified/model@model: biolike
+  - _self_
+
+simulate:
+  _target_: src.simulate.cartesian
+  T: 5000
+  dt: 1
+  v_init: -1
+  a_init: 0.3
+
+measure:
+  _target_: src.analyses.constant.measure
+  strengths:
+    [-0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+
+plot:
+  _target_: src.analyses.constant.plot
+  phase_kws:
+    xlim: [-1.1, 1.1]
+    ylim: [-0.1, 1.1]

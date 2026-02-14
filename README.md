@@ -12,3 +12,8 @@ Paper: [Simplified Model of Intrinsically Bursting Neurons](https://www.biorxiv.
   year={2026},
 }
 ```
+
+
+## Documentation
+- [Installation](docs/INSTALLATION.md): Set up virtual environment and path variables.
+- [Usage](docs/USAGE.md): Reproduce analyses from the paper.

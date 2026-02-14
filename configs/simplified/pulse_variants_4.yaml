@@ -1,0 +1,11 @@
+# @package _global_
+name: simplified/pulse_variants
+
+hydra:
+  sweeper:
+    params:
+      model.d_quiet: 0.4
+
+defaults:
+  - /simplified/pulse_variants_0
+  - _self_

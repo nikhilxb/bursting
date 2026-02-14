@@ -1,0 +1,11 @@
+# @package _global_
+name: simplified/constant_variants
+
+hydra:
+  sweeper:
+    params:
+      model.T_adaptation: 8000
+
+defaults:
+  - /simplified/constant_variants_0
+  - _self_

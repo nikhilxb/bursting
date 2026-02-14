@@ -1,0 +1,62 @@
+# @package _global_
+# Any script using Hydra should extend this config in its Primary Config by adding "infra/base"
+# to the top of its Defaults List. This config defines conventions for naming runs, storing their
+# outputs in hierarchical directory structures, and handling logging. It also sets up the compute
+# infrastructure built on submitit for launching jobs locally ("/compute: local") or on a SLURM
+# cluster ("/compute: slurm").
+
+defaults:
+  - /compute: local
+  - _self_
+
+# The job name in hierarchical format (e.g. "project_name/1_experiment/2_variant"). It can have
+# arbitrary levels of nesting, and it is used to create the directory structure for job outputs.
+# It should NOT have any starting/trailing slashes. If not provided, it defaults to the config name.
+name: null
+
+# The job tag is a string used for organizing directories. It should only contain characters that
+# can be incorporated in a directory name (no spaces or equal signs; e.g. "foo-bar-1").
+tag: null
+
+# Setup output directory structure.
+hydra:
+
+  # All jobs use MULTIRUN mode for a consistent directory structure, even for jobs that do not
+  # perform sweeps.
+  mode: MULTIRUN
+
+  job:
+    name: ${exp_id:${name},${hydra.job.config_name}}
+    chdir: false
+    config:
+      override_dirname:
+        # These keys will not appear in the overrides directory name.
+        exclude_keys:
+          - name
+          - tag
+          - compute
+          - compute.cpu
+          - compute.gpu
+          - compute.mem
+          - compute.time
+          - compute.container
+          - compute.*
+
+  sweep:
+    # The run directory name uses: the job name for the ancestor directory structure, and a
+    # timestamp and human-readable unique ID for the directory name.
+    dir: ${oc.env:OUTPUT_ROOT}/${exp_id:${name},${hydra.job.config_name}}/${sweep_id:${now:%Y-%m%d-%H%M%S},${hruid:},${tag}}
+
+    # The job sudirectory uses: the job scheduler ID and an abbreviated overrides list for the
+    # subdirectory name.
+    subdir: ${hydra.job.id}:${overrides:${hydra.job.override_dirname}}
+
+  callbacks:
+    log_job_return:
+      _target_: hydra.experimental.callbacks.LogJobReturnCallback
+
+  # Paths where Hydra should search for non-primary configs, similar to `PYTHONPATH`.
+  # This MUST be set in any primary config that extends this "infra/base" config.
+  # See https://hydra.cc/docs/advanced/search_path/.
+  # searchpath:
+  #   - file://${oc.env:REPO_ROOT}/path/to/additional/configs

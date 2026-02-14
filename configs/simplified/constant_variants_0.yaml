@@ -1,0 +1,12 @@
+# @package _global_
+name: simplified/constant_variants
+
+defaults:
+  - /simplified/constant
+  - _self_
+
+model:
+  activation: rectangular
+
+simulate:
+  a_init: 0.1

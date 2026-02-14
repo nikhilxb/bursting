@@ -1,0 +1,20 @@
+_target_: src.models.SimplifiedOscillator
+variant: symmetric
+activation: biolike
+B: 0.4
+T_active: 400. # Active period time at i = 0.
+T_quiet: 1000. # Quiet period time at i = 0.
+T_adaptation: 2000. # Adaptation time at i = 0.
+k_active_pos: 0.35 # Active scale at i = +1.
+k_quiet_pos: 0.05 # Quiet scale at i = +1.
+k_active_neg: 0.9 # Active scale at i = -1.
+k_quiet_neg: 1.3 # Quiet scale at i = -1.
+k_adaptation_active_pos: 1. # Adaptation scale in active period at i = +1.
+k_adaptation_quiet_pos: 1.2 # Adaptation scale in quiet period at i = +1.
+k_adaptation_active_neg: 1.2 # Adaptation scale in active period at i = -1.
+k_adaptation_quiet_neg: 0.8 # Adaptation scale in quiet period at i = -1.
+x_active_stable: 1. # Stable point in active period.
+x_quiet_stable: 0. # Stable point in quiet period.
+d_active: 0. # Delay fraction of active period.
+d_quiet: 0.15 # Delay fraction of quiet period.
+noise: 0.02 # Standard deviation of multiplicative noise around mean 1.

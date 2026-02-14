@@ -1,0 +1,36 @@
+# @package _global_
+
+defaults:
+  - /compute/base
+  - override /hydra/launcher: submitit_local
+  - override /hydra/job_logging: stdout
+
+hydra:
+  # Complete list of Submitit Local Launcher parameters at: https://hydra.cc/docs/plugins/submitit_launcher/.
+  # A sweep will run job tasks serially, each of which have the following configuration.
+  launcher:
+    # Path to logs directory.
+    submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+    # Number of CPUs on local compute node.
+    cpus_per_task: ${compute.cpu}
+    # Number of GPUs on local compute node.
+    gpus_per_node: ${compute.gpu}
+    # Memory (in GB) on local compute node.
+    mem_gb: ${compute.mem}
+    # Time allotted (in minutes) per task.
+    timeout_min: ${compute.time}
+
+  # Output logs to only to stdout handler (which submitit captures and saves to a file), so no need
+  # for an additional file handler.
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'
+
+  # Register custon callbacks.
+  callbacks:
+    run_in_container:
+      _target_: infra.launcher.RunInContainerCallback
+      container: ${compute.container}
+    submitit_logs:
+      _target_: infra.launcher.SubmititLogsCallback

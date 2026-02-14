@@ -1,0 +1,12 @@
+# @package _global_
+name: simplified/constant_variants
+
+hydra:
+  sweeper:
+    params:
+      model.k_active_pos: 1
+      model.k_quiet_pos: 1
+
+defaults:
+  - /simplified/constant_variants_0
+  - _self_

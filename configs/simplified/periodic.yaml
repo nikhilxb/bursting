@@ -1,0 +1,35 @@
+# @package _global_
+name: simplified/periodic
+
+defaults:
+  - /base
+  - /simplified/model@model: biolike
+  - _self_
+
+simulate:
+  _target_: src.simulate.cartesian
+  T: 5000
+  dt: 1
+  v_init: -1
+  a_init: 0.3
+
+measure:
+  _target_: src.analyses.periodic.measure
+  widths: [100]
+  strengths_range: [-0.8, 0.8, 0.1]
+  periods_range: [0.75, 1.25, 0.05]
+  pulse_count: 10
+  init_every: 0.1
+
+plot:
+  _target_: src.analyses.periodic.plot
+  waveform_every: [0.2, 0.1]
+  slice_every: [0.1, 0.05]
+  phase_kws:
+    xlim: [-1, 1]
+    xref: [0]
+    ylim: [0, 1]
+
+compute:
+  cpu: 16
+  mem: 16
