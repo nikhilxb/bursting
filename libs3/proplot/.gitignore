@@ -1,0 +1,38 @@
+# VIM extras
+.session.vim
+.vimsession
+.*.sw[a-z]
+
+# PyPi stuff
+build
+dist
+.eggs
+*.egg-info
+
+# Local docs builds
+docs/api
+docs/_build
+docs/_static/proplotrc
+docs/_static/rctable.rst
+
+# Development subfolders
+dev
+sources
+
+# Python extras
+.ipynb_checkpoints
+*.log
+*.pyc
+.*.pyc
+__pycache__
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+
+# Old files
+tmp
+trash
+garbage

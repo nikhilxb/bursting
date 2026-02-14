@@ -1,0 +1,39 @@
+# Hard requirements for running tests
+# See docs/environment.yml for dependency notes
+# WARNING: Keep this up-to-date with ci/environment.yml
+name: proplot-dev
+channels:
+  - conda-forge
+dependencies:
+  - python==3.8
+  - numpy==1.19.5
+  - pandas
+  - xarray
+  - matplotlib==3.2.2
+  - cartopy==0.20.2
+  - ipykernel
+  - pandoc
+  - python-build
+  - setuptools
+  - setuptools_scm
+  - setuptools_scm_git_archive
+  - wheel
+  - pip
+  - pip:
+    - ..
+    - flake8
+    - isort
+    - black
+    - doc8
+    - pytest
+    - pytest-sugar
+    - pyqt5
+    - docutils==0.16
+    - sphinx>=3.0
+    - sphinx-copybutton
+    - sphinx-rtd-light-dark
+    - jinja2==2.11.3
+    - markupsafe==2.0.1
+    - nbsphinx==0.8.1
+    - jupytext
+    - git+https://github.com/proplot-dev/sphinx-automodapi@proplot-mods
